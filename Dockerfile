@@ -2,7 +2,7 @@ FROM alpine:3.8
 
 RUN apk --update add --no-cache pdns-recursor
 
-COPY recursor.conf /etc/pdns/recursor.conf
+COPY recursor.conf strip.lua /etc/pdns/
 
 EXPOSE 53/tcp 53/udp
 
