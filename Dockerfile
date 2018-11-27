@@ -1,6 +1,8 @@
-FROM alpine:3.8
+FROM alpine:edge
 
-RUN apk --repository http://nl.alpinelinux.org/alpine/edge/community --update add --no-cache pdns-recursor
+ENV PDNS_RECURSOR_VERSION 4.1.8-r0
+
+RUN apk --update add --no-cache pdns-recursor==${PDNS_RECURSOR_VERSION}
 
 COPY recursor.conf strip.lua /etc/pdns/
 
