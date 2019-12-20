@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.11
 
 RUN apk --update add --no-cache pdns-recursor
 
